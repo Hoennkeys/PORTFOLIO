@@ -11,14 +11,14 @@ export function Navbar() {
           <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-accent font-display font-bold text-primary-foreground text-sm shadow-[var(--shadow-glow)]">
             &lt;/&gt;
           </span>
-          <span className="font-display font-semibold tracking-tight hidden sm:inline">L.</span>
+          <span className="font-display font-semibold tracking-tight hidden sm:inline">Ferreir4dev.</span>
         </a>
         <ul className="flex items-center gap-1 sm:gap-2 text-sm">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors"
+                className="px-3 py-2 rounded-lg font-medium hover:underline text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-colors"
               >
                 {l.label}
               </a>
