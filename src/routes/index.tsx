@@ -5,6 +5,7 @@ import { About } from "@/components/portfolio/About";
 import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { SpotlightOverlay } from "@/components/portfolio/SpotlightOverlay";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -41,6 +42,7 @@ function Index() {
         <Contact />
       </main>
       <Footer />
+      <SpotlightOverlay />
     </div>
   );
 }

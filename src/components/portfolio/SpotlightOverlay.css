@@ -1,0 +1,40 @@
+.spotlight-overlay {
+  --x: 50vw;
+  --y: 50vh;
+  --spotlight-radius: clamp(250px, 32vw, 400px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: #000;
+  opacity: 1;
+  transition: opacity 280ms ease;
+  will-change: mask-image, -webkit-mask-image, opacity;
+  -webkit-mask-image: radial-gradient(
+    circle var(--spotlight-radius) at var(--x) var(--y),
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  mask-image: radial-gradient(
+    circle var(--spotlight-radius) at var(--x) var(--y),
+    transparent 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.15) 55%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+.spotlight-overlay:not(.is-active) {
+  -webkit-mask-image: none;
+  mask-image: none;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-overlay {
+    transition: none;
+  }
+}
