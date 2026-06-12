@@ -39,6 +39,15 @@ const projects: Project[] = [
     repoUrl: "https://github.com/Hoennkeys/vendapro-crm",
     repoName: "Hoennkeys/vendapro-crm",
   },
+  {
+    title: "Portfólio Pessoal",
+    description:
+      "Este site: portfólio interativo com identidade visual própria, apresentando projetos, stack e formas de contato — open source e em evolução contínua.",
+    stack: ["TanStack Start", "React", "TypeScript", "Tailwind"],
+    status: "online",
+    repoUrl: "https://github.com/Hoennkeys/PORTFOLIO",
+    repoName: "Hoennkeys/PORTFOLIO",
+  },
 ];
 
 export function Projects() {
@@ -55,7 +64,7 @@ export function Projects() {
             <h2 className="mt-2 text-3xl sm:text-4xl font-bold">O Que Estou Construindo</h2>
           </div>
           <p className="text-sm text-muted-foreground max-w-sm">
-            Foco máximo na engenharia de software e desenvolvimento de soluções.
+            @Ferreir4dev.
           </p>
         </div>
 
@@ -95,7 +104,7 @@ export function Projects() {
                 ))}
               </ul>
 
-              <div className="mt-6">
+              <div className="mt-6 flex flex-col gap-2">
                 {p.status === "online" && p.liveUrl ? (
                   <a
                     href={p.liveUrl}
@@ -106,20 +115,17 @@ export function Projects() {
                     Ver Projeto Online
                     <ExternalLink className="h-4 w-4" />
                   </a>
-                ) : (
+                ) : null}
+                {p.repoUrl && p.repoName ? (
                   <button
                     type="button"
-                    onClick={() =>
-                      p.repoUrl &&
-                      p.repoName &&
-                      setActiveRepo({ url: p.repoUrl, name: p.repoName })
-                    }
+                    onClick={() => setActiveRepo({ url: p.repoUrl!, name: p.repoName! })}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--violet)]/40 hover:bg-secondary cursor-pointer"
                   >
                     <Github className="h-4 w-4" />
                     Ver Código no GitHub
                   </button>
-                )}
+                ) : null}
               </div>
             </article>
           ))}
