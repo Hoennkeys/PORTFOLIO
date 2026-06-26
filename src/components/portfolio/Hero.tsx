@@ -14,7 +14,7 @@ export function Hero() {
           />
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground mb-6">
             <Sparkles className="h-3 w-3 text-[var(--neon)]" />
-            Disponível para a primeira oportunidade
+            
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
             Lucas Ferreira,
