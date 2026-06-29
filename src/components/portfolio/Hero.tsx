@@ -14,7 +14,7 @@ export function Hero() {
           />
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground mb-6">
             <Sparkles className="h-3 w-3 text-[var(--neon)]" />
-            
+            Estágio · Suporte Técnico N1 · Imobzi
           </span>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.05]">
             Lucas Ferreira,
@@ -24,8 +24,8 @@ export function Hero() {
             em Formação.
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl">
-            Acadêmico de Análise e Desenvolvimento de Sistemas. Apaixonado por criar soluções, desde
-            sistemas de nicho até arquiteturas robustas. Atualmente focado em{" "}
+            Acadêmico de ADS e estagiário em Suporte Técnico na Imobzi. Aplico lógica e resolução de
+            problemas no dia a dia, enquanto evoluo em{" "}
             <span className="text-foreground font-medium">
               React, Node.js, TypeScript e C++
             </span>
