@@ -1,6 +1,7 @@
 export function Navbar() {
   const links = [
     { href: "#projetos", label: "Projetos" },
+    { href: "#experiencia", label: "Experiência" },
     { href: "#sobre", label: "Sobre mim" },
     { href: "#contato", label: "Contato" },
   ];

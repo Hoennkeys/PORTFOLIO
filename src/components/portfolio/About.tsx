@@ -34,9 +34,10 @@ export function About() {
               resolver problemas — entender uma dor, desenhar uma solução e ver tudo funcionando.
             </p>
             <p>
-              Já construí projetos completos por conta própria, dos primeiros wireframes ao deploy,
-              e agora busco minha primeira oportunidade formal para crescer ao lado de um time
-              experiente, contribuir com energia e absorver tudo o que puder.
+              Já construí projetos completos por conta própria, dos primeiros wireframes ao deploy.
+              Atualmente, atuo como Suporte Técnico N1 na Imobzi, onde aplico meus conhecimentos em
+              resolução de problemas e otimização de processos, enquanto continuo evoluindo minhas
+              habilidades de desenvolvimento focado em React, Node.js, TypeScript e C++.
             </p>
           </div>
         </div>
