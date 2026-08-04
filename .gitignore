@@ -31,3 +31,14 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Python cache & virtual environment
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# SoundID data (ignore raw audio and processed outputs, keep metadata.json)
+data/raw/
+data/processed/
+
