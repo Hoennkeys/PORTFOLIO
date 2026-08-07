@@ -1,0 +1,47 @@
+[
+  {
+    "filename": "cururu.wav",
+    "species": "Rhinella marina",
+    "common_name": "Sapo-cururu",
+    "location": "Lagoa da Pampulha, Belo Horizonte - MG",
+    "timestamp": "2026-08-04T12:00:00-03:00",
+    "duration_seconds": 3.0,
+    "sample_rate": 22050,
+    "processed_spectrogram": "data/processed/spectrograms\\cururu.png",
+    "processed_features": "data/processed/features\\cururu_mfcc.npy",
+    "mfcc_shape": [
+      20,
+      131
+    ]
+  },
+  {
+    "filename": "perereca.wav",
+    "species": "Aplastodiscus argyreornatus",
+    "common_name": "Perereca-verde",
+    "location": "Parque Nacional da Serra dos Órgãos, Teresópolis - RJ",
+    "timestamp": "2026-08-04T12:00:00-03:00",
+    "duration_seconds": 3.0,
+    "sample_rate": 22050,
+    "processed_spectrogram": "data/processed/spectrograms\\perereca.png",
+    "processed_features": "data/processed/features\\perereca_mfcc.npy",
+    "mfcc_shape": [
+      20,
+      131
+    ]
+  },
+  {
+    "filename": "pimenta.wav",
+    "species": "Leptodactylus labyrinthicus",
+    "common_name": "Rã-pimenta",
+    "location": "Parque Nacional da Serra da Canastra, São Roque de Minas - MG",
+    "timestamp": "2026-08-04T12:00:00-03:00",
+    "duration_seconds": 3.0,
+    "sample_rate": 22050,
+    "processed_spectrogram": "data/processed/spectrograms\\pimenta.png",
+    "processed_features": "data/processed/features\\pimenta_mfcc.npy",
+    "mfcc_shape": [
+      20,
+      131
+    ]
+  }
+]

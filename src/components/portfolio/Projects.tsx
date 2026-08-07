@@ -2,6 +2,12 @@ import { useState } from "react";
 import { ExternalLink, Github, Hammer, Radio } from "lucide-react";
 import { GithubModal } from "./GithubModal";
 
+type Repo = {
+  url: string;
+  name: string;
+  label?: string;
+};
+
 type Project = {
   title: string;
   description: string;
@@ -10,6 +16,7 @@ type Project = {
   liveUrl?: string;
   repoUrl?: string;
   repoName?: string;
+  extraRepos?: Repo[];
 };
 
 const projects: Project[] = [
@@ -47,6 +54,31 @@ const projects: Project[] = [
     status: "online",
     repoUrl: "https://github.com/Hoennkeys/PORTFOLIO",
     repoName: "Hoennkeys/PORTFOLIO",
+  },
+  {
+    title: "RibbitApp + RibbitSite",
+    description:
+      "Ecossistema de absorção, identificação e catalogação de sons de sapos, rãs e pererecas. O app captura e processa os áudios enquanto o site exibe o acervo e os dados coletados.",
+    stack: ["React Native", "Python", "FastAPI", "React", "TypeScript"],
+    status: "construcao",
+    repoUrl: "https://github.com/Hoennkeys/RibbitApp",
+    repoName: "Hoennkeys/RibbitApp",
+    extraRepos: [
+      {
+        url: "https://github.com/Hoennkeys/RibbitSite",
+        name: "Hoennkeys/RibbitSite",
+        label: "Ver RibbitSite no GitHub",
+      },
+    ],
+  },
+  {
+    title: "Chaotic Idle",
+    description:
+      "Jogo idle em desenvolvimento baseado no universo Chaotic. Colecione e evolua criaturas, acumule recursos passivamente e descubra combinações únicas nesse universo estratégico e nostálgico.",
+    stack: ["JavaScript", "HTML", "CSS"],
+    status: "construcao",
+    repoUrl: "https://github.com/Hoennkeys/ChaoticIdle",
+    repoName: "Hoennkeys/ChaoticIdle",
   },
 ];
 
@@ -123,9 +155,20 @@ export function Projects() {
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--violet)]/40 hover:bg-secondary cursor-pointer"
                   >
                     <Github className="h-4 w-4" />
-                    Ver Código no GitHub
+                    {p.extraRepos?.length ? "Ver RibbitApp no GitHub" : "Ver Código no GitHub"}
                   </button>
                 ) : null}
+                {p.extraRepos?.map((repo) => (
+                  <button
+                    key={repo.url}
+                    type="button"
+                    onClick={() => setActiveRepo({ url: repo.url, name: repo.name })}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-border bg-secondary/60 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[var(--violet)]/40 hover:bg-secondary cursor-pointer"
+                  >
+                    <Github className="h-4 w-4" />
+                    {repo.label ?? "Ver Código no GitHub"}
+                  </button>
+                ))}
               </div>
             </article>
           ))}
