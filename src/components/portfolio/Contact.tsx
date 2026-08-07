@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight, MessageSquare } from "lucide-react";
 
 const items = [
   {
@@ -18,6 +18,12 @@ const items = [
     href: "mailto:ferreir4dev@gmail.com",
     icon: Mail,
     handle: "ferreir4dev@gmail.com",
+  },
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/5581982180780",
+    icon: MessageSquare,
+    handle: "(81) 982180780",
   },
 ];
 
