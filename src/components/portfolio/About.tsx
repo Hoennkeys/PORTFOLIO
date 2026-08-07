@@ -6,15 +6,29 @@ import {
   GitBranch,
   Atom,
   Server,
+  Globe,
+  Paintbrush,
+  Wind,
+  Zap,
+  Smartphone,
+  Terminal,
+  Layers,
 } from "lucide-react";
 
 const skills = [
   { icon: Code2, label: "C++" },
   { icon: Braces, label: "JavaScript" },
   { icon: FileCode2, label: "TypeScript" },
+  { icon: Globe, label: "HTML" },
+  { icon: Paintbrush, label: "CSS" },
   { icon: Atom, label: "React" },
+  { icon: Smartphone, label: "React Native" },
   { icon: Server, label: "Node.js" },
+  { icon: Layers, label: "FastAPI" },
+  { icon: Terminal, label: "Python" },
   { icon: Database, label: "SQL" },
+  { icon: Wind, label: "Tailwind" },
+  { icon: Zap, label: "Vite" },
   { icon: GitBranch, label: "Git" },
 ];
 
