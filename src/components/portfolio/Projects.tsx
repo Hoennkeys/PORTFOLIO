@@ -61,6 +61,7 @@ const projects: Project[] = [
       "Ecossistema de absorção, identificação e catalogação de sons de sapos, rãs e pererecas. O app captura e processa os áudios enquanto o site exibe o acervo e os dados coletados.",
     stack: ["React Native", "Python", "FastAPI", "React", "TypeScript"],
     status: "construcao",
+    liveUrl: "https://appribbit.vercel.app/",
     repoUrl: "https://github.com/Hoennkeys/RibbitApp",
     repoName: "Hoennkeys/RibbitApp",
     extraRepos: [
@@ -137,14 +138,14 @@ export function Projects() {
               </ul>
 
               <div className="mt-6 flex flex-col gap-2">
-                {p.status === "online" && p.liveUrl ? (
+                {p.liveUrl ? (
                   <a
                     href={p.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-accent px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-glow)] transition-transform hover:scale-[1.02]"
                   >
-                    Ver Projeto Online
+                    {p.status === "construcao" ? "Ver Site Online" : "Ver Projeto Online"}
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 ) : null}
