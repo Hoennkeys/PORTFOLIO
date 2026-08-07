@@ -59,7 +59,7 @@ const projects: Project[] = [
     title: "RibbitApp + RibbitSite",
     description:
       "Ecossistema de absorção, identificação e catalogação de sons de sapos, rãs e pererecas. O app captura e processa os áudios enquanto o site exibe o acervo e os dados coletados.",
-    stack: ["React Native", "Python", "FastAPI", "React", "TypeScript"],
+    stack: ["React Native", "TypeScript", "Supabase", "React", "Tailwind", "Vite"],
     status: "construcao",
     liveUrl: "https://appribbit.vercel.app/",
     repoUrl: "https://github.com/Hoennkeys/RibbitApp",

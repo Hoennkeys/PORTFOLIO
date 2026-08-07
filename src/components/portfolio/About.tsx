@@ -11,7 +11,6 @@ import {
   Wind,
   Zap,
   Smartphone,
-  Terminal,
   Layers,
 } from "lucide-react";
 
@@ -24,9 +23,8 @@ const skills = [
   { icon: Atom, label: "React" },
   { icon: Smartphone, label: "React Native" },
   { icon: Server, label: "Node.js" },
-  { icon: Layers, label: "FastAPI" },
-  { icon: Terminal, label: "Python" },
   { icon: Database, label: "SQL" },
+  { icon: Layers, label: "Supabase" },
   { icon: Wind, label: "Tailwind" },
   { icon: Zap, label: "Vite" },
   { icon: GitBranch, label: "Git" },
