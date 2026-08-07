@@ -1,0 +1,6 @@
+# Python scripts and dependencies — used locally only, not part of the web build
+requirements.txt
+.python-version
+src/soundid/
+PLans/
+data/
