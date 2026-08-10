@@ -1,4 +1,8 @@
 import { Github, Linkedin, Mail, ArrowUpRight, MessageSquare } from "lucide-react";
+import { ScrollRevealText } from "./ScrollRevealText";
+import { MagneticWrapper } from "./MagneticWrapper";
+import { ContactTorus } from "./ContactTorus";
+import { Divider3D } from "./Divider3D";
 
 const items = [
   {
@@ -29,50 +33,43 @@ const items = [
 
 export function Contact() {
   return (
-    <section id="contato" className="py-12 px-6">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-6">
-        <div className="bento-card bento-card-hover lg:col-span-3 p-8 sm:p-12 relative overflow-hidden">
-          <div
-            className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full opacity-30 blur-3xl"
-            style={{ background: "var(--gradient-accent)" }}
-            aria-hidden
-          />
-          <span className="text-xs uppercase tracking-widest text-[var(--violet)] font-medium">
+    <section id="contato" className="py-20 px-6 perspective-3d">
+      <div className="max-w-4xl mx-auto flex flex-col items-center text-center gap-12 perspective-3d">
+        <div className="float-slow relative w-full flex flex-col items-center justify-center min-h-[300px] z-10">
+          <ContactTorus />
+          <span className="text-xs uppercase tracking-widest text-[var(--violet)] font-medium z-10">
             Contato
           </span>
-          <h2 className="mt-3 text-3xl sm:text-5xl font-bold leading-tight">
-            Vamos Criar
+          <h2 className="mt-4 text-4xl sm:text-6xl font-bold leading-tight z-10">
+            <ScrollRevealText text="Vamos Criar" as="span" />
             <br />
-            <span className="text-gradient">Algo Juntos?</span>
+            <span className="block text-gradient mt-2 text-[var(--neon)] filter drop-shadow-[0_0_15px_rgba(0,240,255,0.5)]">
+              Algo Juntos?
+            </span>
           </h2>
-          <p className="mt-5 text-muted-foreground max-w-md">
+          <Divider3D label="COMM_LINK" color="pink" />
+          <p className="mt-4 text-muted-foreground max-w-md mx-auto z-10">
             Estou sempre aberto a novas ideias, colaborações ou conversas sobre desenvolvimento.
           </p>
         </div>
 
-        <div className="lg:col-span-2 grid gap-4">
+        <div className="flex flex-wrap items-center justify-center gap-4 w-full float-delayed relative z-10">
           {items.map(({ label, href, icon: Icon, handle }) => {
             const external = href.startsWith("http");
             return (
-              <a
-                key={label}
-                href={href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                className="bento-card bento-card-hover group flex items-center justify-between gap-3 p-5"
-                aria-label={label}
-              >
-                <span className="flex items-center gap-4 min-w-0">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary/60 border border-border group-hover:bg-gradient-accent group-hover:border-transparent transition-all">
-                    <Icon className="h-5 w-5 text-foreground group-hover:text-primary-foreground transition-colors" />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block font-semibold">{label}</span>
-                    <span className="block text-xs text-muted-foreground truncate">{handle}</span>
-                  </span>
-                </span>
-                <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-[var(--neon)] transition-colors shrink-0" />
-              </a>
+              <MagneticWrapper key={label} maxDistance={6} sensitivity={0.2}>
+                <a
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  className="group flex items-center gap-3 rounded-full border border-border/30 bg-secondary/10 px-6 py-3 transition-all hover:border-[var(--neon)]/50 hover:bg-secondary/20 hover:scale-[1.03] cursor-pointer"
+                  aria-label={label}
+                >
+                  <Icon className="h-4 w-4 text-[var(--neon)] group-hover:scale-110 transition-transform" />
+                  <span className="font-semibold text-sm">{label}</span>
+                  <ArrowUpRight className="h-3 w-3 text-muted-foreground group-hover:text-[var(--neon)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                </a>
+              </MagneticWrapper>
             );
           })}
         </div>

@@ -2,7 +2,7 @@ import { Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="px-6 py-10 border-t border-border mt-12">
+    <footer className="px-6 py-10 border-t border-border mt-12 relative z-10">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <p>© 2026 Lucas Ferreira. Todos os direitos reservados.</p>
         <div className="flex items-center gap-2">
