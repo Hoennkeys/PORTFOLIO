@@ -6,6 +6,8 @@ import { Experience } from "@/components/portfolio/Experience";
 import { Projects } from "@/components/portfolio/Projects";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { ParticleBackground } from "@/components/portfolio/ParticleBackground";
+import { MorphingBlobs } from "@/components/portfolio/MorphingBlobs";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,8 +32,11 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      <div className="grain-overlay" aria-hidden="true" />
+      <MorphingBlobs />
+      <ParticleBackground />
       <Navbar />
-      <main className="relative">
+      <main className="relative z-10">
         <Hero />
         <About />
         <Experience />
@@ -42,3 +47,6 @@ function Index() {
     </div>
   );
 }
+
+
+

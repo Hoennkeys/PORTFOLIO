@@ -101,23 +101,26 @@ html {
 @utility bento-card {
   position: relative;
   border-radius: var(--radius);
-  background: var(--color-card);
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-card);
+  /* No visual background or borders - contents float directly in space */
+  background: transparent;
+  transform-style: preserve-3d;
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    text-shadow 0.4s ease;
 }
 
 @utility bento-card-hover {
   &:hover {
-    transform: translateY(-2px);
-    border-color: oklch(0.62 0.25 28 / 0.45);
-    box-shadow:
-      var(--shadow-card),
-      var(--shadow-glow);
+    /* Translate forward on Z-axis and rotate in 3D perspective space */
+    transform: translateY(-6px) translateZ(30px) rotateY(2deg) rotateX(-1deg);
+    /* Futuristic text and child elements glow */
+    text-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
   }
+}
+
+.perspective-3d {
+  perspective: 1200px;
+  transform-style: preserve-3d;
 }
 
 @utility text-gradient {
@@ -130,3 +133,37 @@ html {
 @utility bg-gradient-accent {
   background: var(--gradient-accent);
 }
+
+/* 3D Immersive Additions: Digital Grain and Float Animations */
+.grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes float-delayed {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(8px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-slow {
+  animation: float 7s ease-in-out infinite;
+}
+
+.float-delayed {
+  animation: float-delayed 9s ease-in-out infinite;
+}
+
